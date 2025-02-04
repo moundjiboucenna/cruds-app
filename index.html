@@ -1,53 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUDS</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUDS Application</title>
 
     <!-- Style Link -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Faveicno -->
-    <link rel="icon" href="cruds-logo.jpg">
-
+    <link rel="icon" href="my-favicon/favicon-32x32.png" />
 </head>
+
 <body>
     <main class="crud">
         <!-- 3.1- Header Section -->
         <div class="head">
             <h1>CRUDS</h1>
-            <P>Products Management System</P>
-            <p>The title, price, and category are required fields for creating a product.</p>
-            <p>You cannot create more than 100 copies of the same product at the same time.</p>
-        </div> <!-- ./head -->
+            <p>Products Management System</p>
+            <p>
+                The title, price, and category are required fields for creating a
+                product.
+            </p>
+            <p>
+                You cannot create more than 100 copies of the same product at the same
+                time.
+            </p>
+        </div>
+        <!-- ./head -->
 
         <!-- 3.2- Inputs Section -->
         <div class="inputs">
-            <input type="text" id="title" placeholder="title">
+            <input type="text" id="title" placeholder="title" />
             <div class="price">
-                <input onkeyup="calculateTotal()" type="number" id="price" placeholder="price">
-                <input onkeyup="calculateTotal()" type="number" id="taxes" placeholder="taxes">
-                <input onkeyup="calculateTotal()" type="number" id="ads" placeholder="ads">
-                <input onkeyup="calculateTotal()" type="number" id="discount" placeholder="discount">
+                <input onkeyup="calculateTotal()" type="number" id="price" placeholder="price" />
+                <input onkeyup="calculateTotal()" type="number" id="taxes" placeholder="taxes" />
+                <input onkeyup="calculateTotal()" type="number" id="ads" placeholder="ads" />
+                <input onkeyup="calculateTotal()" type="number" id="discount" placeholder="discount" />
                 <small id="total"></small>
-            </div> <!-- ./price -->
-            <input type="number" id="count" placeholder="count">
-            <input type="text" id="category" placeholder="category">
+            </div>
+            <!-- ./price -->
+            <input type="number" id="count" placeholder="count" />
+            <input type="text" id="category" placeholder="category" />
             <button id="submit">Create</button>
-        </div> <!-- ./inputs -->
+        </div>
+        <!-- ./inputs -->
 
         <!-- 3.2- Outputs Section -->
         <div class="outputs">
             <div class="search">
-                <input onkeyup="searchProduct(this.value)" type="text" id="search" placeholder="search">
+                <input onkeyup="searchProduct(this.value)" type="text" id="search" placeholder="search" />
                 <div class="btn-search">
-                    <button onclick="getSearchMood(this.id)" id="search-title">Search By Title</button>
-                    <button onclick="getSearchMood(this.id)" id="search-category">Search By Category</button>
-                </div> <!-- ./btn-search -->
-            </div> <!-- ./search-->
+                    <button onclick="getSearchMood(this.id)" id="search-title">
+                        Search By Title
+                    </button>
+                    <button onclick="getSearchMood(this.id)" id="search-category">
+                        Search By Category
+                    </button>
+                </div>
+                <!-- ./btn-search -->
+            </div>
+            <!-- ./search-->
             <div id="delete-all"></div>
-            <table> 
+            <table>
                 <thead>
                     <tr>
                         <th>id</th>
@@ -62,13 +78,15 @@
                         <th>delete</th>
                     </tr>
                 </thead>
-                <tbody id="tbody">
-                </tbody>
+                <tbody id="tbody"></tbody>
             </table>
-        </div> <!-- ./outputs -->
-    </main> <!-- ./crud -->
+        </div>
+        <!-- ./outputs -->
+    </main>
+    <!-- ./crud -->
 
     <!-- JavaScript File Link -->
     <script src="main.js"></script>
 </body>
+
 </html>

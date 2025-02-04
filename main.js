@@ -47,7 +47,12 @@ submit.onclick = function () {
         count: count.value,
         category: category.value,
     };
-    if (title.value != "" && price.value != "" && category.value != "" && count.value <= 100) {
+    if (
+        title.value != "" &&
+        price.value != "" &&
+        category.value != "" &&
+        count.value <= 100
+    ) {
         if (mood == "create") {
             if (product.count > 1) {
                 for (let i = 0; i < product.count; i++) {
@@ -64,7 +69,6 @@ submit.onclick = function () {
         }
         clearInputs();
     }
-
     localStorage.setItem("product", JSON.stringify(products));
     showProducts();
 };
@@ -158,7 +162,7 @@ function getSearchMood(id) {
 }
 
 function searchProduct(value) {
-    let table = ""; 
+    let table = "";
     for (let i = 0; i < products.length; i++) {
         if (searchMood == "title") {
             if (products[i].title.toLowerCase().includes(value.toLowerCase())) {
